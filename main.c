@@ -17,13 +17,10 @@ void Ascendant();
 void recherch();
 void operation();
 void Classment1();
-//void afficher_aper_montantA();
 void Fidelisation();
 void loop_classement(int i , int j );
 void afficher_aper_montantD(float montant);
 void afficher_aper_montantA(float montant );
-
-
 int main()
 {
         int choix , a=0;
@@ -78,7 +75,7 @@ void ajouterCompte()
         do
         {
             var=true;
-            printf("\n Donner Son CIN: ");
+            printf("\nDonner Son CIN*: ");
             scanf("%s",cartNatioanl);
             for (i=0;i<nomber_Clinet;i++)
             {
@@ -92,11 +89,12 @@ void ajouterCompte()
         if(var==true) strcpy(compteBancaire[i].CIN,cartNatioanl);
 
         }while(var==false);
-            printf("\n Donner Le Nom de Compte: ");
+            printf("\nDonner Le Nom de Compte*: ");
             getchar();
             gets(compteBancaire[i].nom);
-            printf("\nDonner Le Solde de Compte: ");
+            printf("\nDonner Le Solde de Compte*: ");
             scanf("%f",&compteBancaire[i].montant);
+            system("cls");
             printf("\n\t** **__ super__** ** ");
             printf("\nUn compte a ete cree au nom de %s. \n",compteBancaire[i].nom);
             nomber_Clinet++; //================= Aour Ajouterle nombre de comptes======================
@@ -214,7 +212,6 @@ void operation()
                  printf("\n** ** ** Super ** **");
                 printf("\nNouveau solde pour le compte %s",compteBancaire[i].nom);
             }
-
         }
     }
 }
@@ -271,8 +268,9 @@ void Fidelisation()
         for (a =0; a<3; a++)
         {
          compteBancaire[a].montant+=((1.3*compteBancaire[a].montant)/100);
-         printf("\nNouveau solde pour le compte %s",  compteBancaire[a].nom);
         }
+         printf("\n\t\t** Super ** ");
+         printf("\n\t| Fidlastion A Ete Effictue |\n\n");
 }
                 //============================ Fontion de triage par decroissent ===============================
 void loop_classement(int i , int j )
