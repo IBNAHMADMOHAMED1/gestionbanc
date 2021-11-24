@@ -12,9 +12,17 @@ Compte compteBancaire[10] ;
         int nomber_Clinet=0 , i;
         char cartNatioanl[20];
 void ajouterCompte();
-void informationCompte();
-void afficher_aper_montantA(float montant );
+void information_touts_Comptes();
+void Ascendant();
+void recherch();
+void operation();
+void Classment1();
+//void afficher_aper_montantA();
+void Fidelisation();
+void loop_classement(int i , int j );
 void afficher_aper_montantD(float montant);
+void afficher_aper_montantA(float montant );
+
 
 int main()
 {
@@ -28,7 +36,7 @@ int main()
         printf("\t\n|*-> 2. Afficher tous les comptes.                                                       |");
         printf("\t\n|*-> 3. Operations :Retrait ou Depot                                                     |");
         printf("\t\n|*-> 4. Afficher Classement (Par Order Ascendant Ou Par Ordre Descendant                 |");
-        printf("\t\n|*-> 5. Afficher Classement (comptes bancaire ayant un montant superieur a un )          |");
+        printf("\t\n|*-> 5. Afficher Classement (comptes bancaire ayant un montant superieur a un chifer     |");
         printf("\t\n|*-> 6. Rechercher un compte.                                                            |");
         printf("\t\n|*-> 7. Personnes beneficiaires Fidelisation                                             |");
         printf("\t\n|*-> 8. Quitter l application                                                            |");
@@ -229,7 +237,7 @@ void Classment1()
     switch(Choix_Classement)
     {
     case 'A':
-            loop_classement(i , j );
+           loop_classement(i , j );
            afficher_aper_montantA(montant);
             break;
     case 'D':
@@ -242,15 +250,18 @@ void Classment1()
 void afficher_aper_montantA(float montant)
 {
     int a=0 ;
-        while(a<nomber_Clinet)
+        for(a;a<nomber_Clinet;a++)
         {
             if(compteBancaire[a].montant<montant) continue;
                  printf("\nNom de Compte            :%s",compteBancaire[a].nom);
                  printf("\nCIN                      :%s",compteBancaire[a].CIN);
                  printf("\nSolde de Compte          :%.3fDh",compteBancaire[a].montant);
                  printf("\n================================================================");
-                 ++a;
+
         }
+     printf("\nAppuyer sur n'mporte quell key pour continue: ");
+     getc(stdin);             // ============================== Stdin ==> clavier
+     getchar();
 }
                 //============================== Fonction de fidelasation ===================================
 void Fidelisation()
